@@ -1,7 +1,30 @@
-export const COVERFLOW = {
+/* ==========================================================
+   OXLAY Coverflow Engine
+   Part 1
+   ----------------------------------------------------------
+   Config
+   Engine Factory
+   Internal State
+========================================================== */
+
+/* ==========================================================
+    DEFAULT CONFIG
+========================================================== */
+
+export const DEFAULT_OPTIONS = {
+  loop: true,
+
+  autoplay: true,
+
+  autoplayDelay: 3500,
+
+  pauseOnHover: true,
+
   perspective: 1800,
 
-  maxRotation: 32,
+  maxRotate: 35,
+
+  maxTranslateX: 220,
 
   maxTranslateZ: 120,
 
@@ -15,92 +38,134 @@ export const COVERFLOW = {
 
   maxBlur: 3,
 
-  transition:
-    'transform .75s cubic-bezier(.22,.61,.36,1), opacity .55s, filter .55s',
+  shadowBlur: 60,
+
+  transition: 'transform .65s cubic-bezier(.22,.61,.36,1),opacity .45s,filter .45s',
 };
 
-export function calculateCoverflow(
-  emblaApi,
-  slideCount
-) {
-  if (!emblaApi) return [];
+/* ==========================================================
+    INTERNAL STATE
+========================================================== */
 
-  const engine = emblaApi.internalEngine();
+function createState() {
+  return {
+    emblaApi: null,
 
-  const scrollProgress = emblaApi.scrollProgress();
+    engine: null,
 
-  const snaps = emblaApi.scrollSnapList();
+    options: null,
 
-  const loopPoints = engine.slideLooper.loopPoints;
+    slides: [],
 
-  const styles = [];
+    slideNodes: [],
 
-  snaps.forEach((snap, index) => {
-    let diff = snap - scrollProgress;
+    loopPoints: [],
 
-    if (engine.options.loop) {
-      loopPoints.forEach((loopItem) => {
-        const target = loopItem.target();
+    rafId: null,
 
-        if (loopItem.index === index && target !== 0) {
-          diff =
-            target < 0
-              ? snap - (1 + scrollProgress)
-              : snap + (1 - scrollProgress);
-        }
-      });
-    }
+    autoplayId: null,
 
-    const abs = Math.abs(diff);
+    isPlaying: false,
 
-    const rotate =
-      -diff * COVERFLOW.maxRotation;
+    isHover: false,
 
-    const scale = Math.max(
-      COVERFLOW.minScale,
-      COVERFLOW.maxScale - abs * 0.35
-    );
+    isDestroyed: false,
 
-    const opacity = Math.max(
-      COVERFLOW.minOpacity,
-      COVERFLOW.maxOpacity - abs * 0.8
-    );
+    progress: 0,
 
-    const blur =
-      Math.min(abs * 3, COVERFLOW.maxBlur);
+    selectedIndex: 0,
 
-    const translateZ =
-      Math.max(
-        0,
-        COVERFLOW.maxTranslateZ -
-          abs * COVERFLOW.maxTranslateZ
-      );
+    previousProgress: 0,
 
-    const brightness =
-      1 - abs * .18;
+    previousIndex: 0,
+  };
+}
 
-    styles[index] = {
-      opacity,
+/* ==========================================================
+    ENGINE FACTORY
+========================================================== */
 
-      filter: `
-        blur(${blur}px)
-        brightness(${brightness})
-      `,
+export function createCoverflow(emblaApi, slideNodes, options = {}) {
+  const state = createState();
 
-      transform: `
-        perspective(${COVERFLOW.perspective}px)
-        translateZ(${translateZ}px)
-        rotateY(${rotate}deg)
-        scale(${scale})
-      `,
+  state.emblaApi = emblaApi;
 
-      transition: COVERFLOW.transition,
+  state.options = {
+    ...DEFAULT_OPTIONS,
+    ...options,
+  };
 
-      transformStyle: 'preserve-3d',
+  if (!emblaApi) {
+    console.warn('[Coverflow] Embla belum tersedia.');
 
-      zIndex: Math.round(1000 - abs * 100),
-    };
-  });
+    return null;
+  }
 
-  return styles;
+  state.engine = emblaApi.internalEngine();
+
+  state.slideNodes = slideNodes ?? emblaApi.slideNodes();
+
+  state.slides = emblaApi.slideNodes();
+
+  state.loopPoints = state.engine.slideLooper.loopPoints;
+
+  /* =======================================
+      Getter
+  ======================================= */
+
+  const getEmbla = () => state.emblaApi;
+
+  const getEngine = () => state.engine;
+
+  const getSlides = () => state.slides;
+
+  const getSlideNodes = () => state.slideNodes;
+
+  const getLoopPoints = () => state.loopPoints;
+
+  const getOptions = () => state.options;
+
+  const getProgress = () => state.emblaApi.scrollProgress();
+
+  const getSelected = () => state.emblaApi.selectedScrollSnap();
+
+  /* =======================================
+      Setter
+  ======================================= */
+
+  const setHover = (value) => {
+    state.isHover = value;
+  };
+
+  const setPlaying = (value) => {
+    state.isPlaying = value;
+  };
+
+  /* =======================================
+      Public API
+  ======================================= */
+
+  return {
+    state,
+
+    getEmbla,
+
+    getEngine,
+
+    getSlides,
+
+    getSlideNodes,
+
+    getLoopPoints,
+
+    getOptions,
+
+    getProgress,
+
+    getSelected,
+
+    setHover,
+
+    setPlaying,
+  };
 }

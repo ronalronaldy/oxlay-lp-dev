@@ -397,9 +397,9 @@ const ImageCropper = () => {
 
           {imageSrc && (
             <Grid container spacing={3}>
-              {/* =====================================================
+        {/* =====================================================
         Aspect Ratio
-    ====================================================== */}
+        ====================================================== */}
               <Grid item xs={12}>
                 <FormControl size="small" sx={{ minWidth: 160 }}>
                   <InputLabel>Aspect Ratio</InputLabel>
