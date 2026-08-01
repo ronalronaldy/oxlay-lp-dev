@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Clock-1';
+    src: url('./assets/fonts/radio.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fly-in-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px; /* Adjust as needed to match the Skeleton component */
+    padding: 2px;
+    border-radius: 0px;
+    background-color: #0A7EA4;
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    position: relative; /* Changed to relative to match the Skeleton */
+    font-family: 'Clock-1', sans-serif; /* Ensure the Clock-1 font is used */
+}
+
+.fly-in-text li {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 100;
+    font-size: 8vw; /* Responsive font size */
+    color: #fff;
+    opacity: 1;
+    transition: all 2.5s ease;
+}
+
+.fly-in-text li:last-child {
+    margin-right: 0;
+}
+
+.fly-in-text.hidden li {
+    opacity: 0;
+}
+
+.fly-in-text.hidden li:nth-child(1) {
+    transform: translateX(-200px) translateY(-200px);
+}
+
+.fly-in-text.hidden li:nth-child(2) {
+    transform: translateX(20px) translateY(100px);
+}
+
+.fly-in-text.hidden li:nth-child(3) {
+    transform: translateX(-150px) translateY(-80px);
+}
+
+.fly-in-text.hidden li:nth-child(4) {
+    transform: translateX(10px) translateY(-200px);
+}
+
+.fly-in-text.hidden li:nth-child(5) {
+    transform: translateX(-300px) translateY(200px);
+}
+
+.fly-in-text.hidden li:nth-child(6) {
+    transform: translateX(20px) translateY(-20px);
+}
+
+.fly-in-text.hidden li:nth-child(7) {
+    transform: translateX(30px) translateY(200px);
+}
+
+/* Media queries for more fine-tuned control */
+@media (min-width: 768px) {
+    .fly-in-text {
+        padding: 20px;
+    }
+
+    .fly-in-text li {
+        margin-right: 30px;
+        font-size: 9vw; /* Adjust font size for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .fly-in-text li {
+        margin-right: 40px;
+        font-size: 8vw; /* Adjust font size for even larger screens */
+    }
+}

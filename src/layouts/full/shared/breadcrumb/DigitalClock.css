@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Clock-1';
+    src: url('./assets/fonts/ticking.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border-radius: 0px;
+    background-color: #0A7EA4;
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clock::before {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    filter: blur(15px);
+    border-radius: 10px;
+    content: '';
+}
+
+.clock-date {
+    font-size: 0.8rem;
+    margin-bottom: 25px;
+}
+
+.clock-time {
+    font-size: 7rem;
+    font-weight: bold;
+    font-family: 'Clock-1';
+    margin-bottom: 70px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .clock {
+        padding: 20px;
+    }
+
+    .clock-date {
+        font-size: 1rem;
+    }
+
+    .clock-time {
+        font-size: 5rem;
+    }
+}
