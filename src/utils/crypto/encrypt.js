@@ -1,6 +1,6 @@
-import { deriveKey } from "./deriveKey";
-import { bytesToBase64 } from "./base64";
-import { ITERATIONS } from "./constants";
+import { deriveKey } from './deriveKey';
+import { bytesToBase64 } from './base64';
+import { ITERATIONS } from './constants';
 
 export async function encryptData(data, password) {
   const encoder = new TextEncoder();
@@ -8,24 +8,21 @@ export async function encryptData(data, password) {
   const salt = crypto.getRandomValues(new Uint8Array(16));
   const iv = crypto.getRandomValues(new Uint8Array(12));
 
-  const key = await deriveKey(
-    password,
-    bytesToBase64(salt)
-  );
+  const key = await deriveKey(password, bytesToBase64(salt), ITERATIONS);
 
   const encrypted = await crypto.subtle.encrypt(
     {
-      name: "AES-GCM",
+      name: 'AES-GCM',
       iv,
     },
     key,
-    encoder.encode(JSON.stringify(data))
+    encoder.encode(JSON.stringify(data)),
   );
 
   return {
     v: 1,
-    alg: "AES-GCM",
-    kdf: "PBKDF2",
+    alg: 'AES-GCM',
+    kdf: 'PBKDF2',
     iter: ITERATIONS,
     salt: bytesToBase64(salt),
     iv: bytesToBase64(iv),

@@ -1,4 +1,4 @@
-import encrypted from "../data/marketplace.enc.json";
+import encrypted from "../data/market-place/product.enc.json";
 
 import { decryptData } from "../crypto";
 
