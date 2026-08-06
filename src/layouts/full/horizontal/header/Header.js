@@ -69,12 +69,6 @@ const Header = () => {
         {/* ------------------------------------------- */}
         {/* <Search /> */}
 
-        {lgUp ? (
-          <>
-            {/* <NavListing /> */}
-            {/* <TabBar/> */}
-          </>
-        ) : <NavListing />}
         
         <Box flexGrow={0.9} />
         <Stack spacing={1} direction="row" alignItems="center">

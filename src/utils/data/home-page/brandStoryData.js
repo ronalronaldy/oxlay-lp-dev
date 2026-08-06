@@ -1,14 +1,11 @@
-import { sonBesi1 } from "../../../views/sample-page/DataUtils";
-
 export const brandStory = {
   badge: 'WHO WE ARE',
 
   title: 'Dibuat Untuk Para Pekerja Keras',
 
   description:
-    'Selama bertahun-tahun OX-LAY berkomitmen menghadirkan sepatu kerja yang nyaman, kuat, dan dipercaya oleh berbagai profesi di Indonesia. Kami percaya setiap pekerja berhak menggunakan sepatu yang mampu melindungi tanpa mengorbankan kenyamanan.',
-
-  image: sonBesi1,
+    'Dibuat secara lokal di Indonesia dengan standar kualitas yang kami jaga di setiap proses produksi, OX-LAY menghadirkan sepatu kerja yang memadukan kekuatan, kenyamanan, dan desain fungsional. Dari bengkel produksi kami hingga sampai ke kaki para pekerja, setiap pasang sepatu dibuat dengan komitmen untuk memberikan perlindungan terbaik di lingkungan kerja.',
+  // image: sonBesi1,
 
   highlights: [
     'Material premium berkualitas',

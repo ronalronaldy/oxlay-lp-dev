@@ -1,5 +1,6 @@
-import { slipOnJ1, r4Black1, m4Steel1, botR4Black1 } from './image-list';
-
+import slipOnJ1 from 'src/assets/images/products/PCategory-sonJ.jpg';
+import r4Black1 from 'src/assets/images/products/PCategory-r4Htm.jpg';
+import m4Steel1 from 'src/assets/images/products/PCategory-steelToe.jpg';
 export const productCategories = [
   {
     category: 'Slip-On',
@@ -12,12 +13,7 @@ export const productCategories = [
   },
 
   {
-    category: 'Steel Toe',
+    category: 'Sepatu safety',
     thumbnail: m4Steel1,
-  },
-
-  {
-    category: 'Boots',
-    thumbnail: botR4Black1,
   },
 ];

@@ -190,8 +190,8 @@ export default function ProductGrid() {
                     width: '100%',
 
                     aspectRatio: {
-                      xs: '4 / 5',
-                      md: '4 / 5',
+                      xs: ' 1/ 1',
+                      md: '1 / 1',
                     },
 
                     objectFit: 'cover',

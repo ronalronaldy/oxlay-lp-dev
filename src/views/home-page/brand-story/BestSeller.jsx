@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
 import { Box, Chip, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { slipOnD1, slipOnJ1, slipOnJ2, slipOnJ3 } from '../../../utils/data/product/image-list';
-
-const images = [slipOnJ3, slipOnJ1, slipOnJ2, slipOnD1];
+// import { slipOnJ1, slipOnJ2, slipOnJ3 } from '../../../utils/data/product/image-list';
+import slipOnJ1 from 'src/assets/images/products/sonJ1.jpg';
+import slipOnJ2 from 'src/assets/images/products/sonJ2.jpg';
+import slipOnJ3 from 'src/assets/images/products/sonJ3.jpg';
+const images = [slipOnJ3, slipOnJ1, slipOnJ2];
 
 export default function BestSeller() {
   const theme = useTheme();
@@ -13,7 +15,7 @@ export default function BestSeller() {
   return (
     <Container maxWidth="lg" sx={{ pt: 10 }}>
       <Chip
-        label={<Typography variant={isMobile? 'h6':'h2'}>Our Best Selling</Typography>}
+        label={<Typography variant={isMobile ? 'h6' : 'h2'}>Our Best Selling</Typography>}
         color="primary"
         variant="filled"
       />

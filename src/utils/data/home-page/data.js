@@ -1,19 +1,22 @@
 import { IconCubeSend, IconMap2, IconShoppingBag } from '@tabler/icons';
-import { base64Image1, base64Image3, base64Image4 } from './dataImages';
+// import { base64Image1, base64Image3, base64Image4 } from './dataImages';
+import bannerWeb1 from 'src/assets/images/banners/bannerWeb1.jpg';
+import bannerWeb2 from 'src/assets/images/banners/bannerWeb2.jpg';
+import bannerWeb3 from 'src/assets/images/banners/bannerWeb3.jpg';
 
 
-
+const base64Image1 = bannerWeb1
 export const banners = [
   {
-    image: base64Image1,
+    image: bannerWeb1,
   },
 
   {
-    image: base64Image4,
+    image: bannerWeb2,
   },
 
   {
-    image: base64Image3,
+    image: bannerWeb3,
   },
 ];
 

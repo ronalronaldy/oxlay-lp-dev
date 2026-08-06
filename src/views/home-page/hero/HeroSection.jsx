@@ -23,23 +23,35 @@ const HeroSection = () => {
           style: {
             color: '#fff',
             marginTop: 10,
-            },
-            }}
+          },
+        }}
       >
         {banners.map((item, index) => (
-          <CardMedia
-            key={index}
+          // <CardMedia
+          //   key={index}
+          //   component="img"
+          //   image={item.image}
+          //   sx={{
+          //     width: '100%',
+          //     height: {
+          //       xs: 240,
+          //       sm: 360,
+          //       md: '85vh',
+          //     },
+          //     objectFit: 'cover',
+          //     borderRadius: 4,
+          //   }}
+          // />
+          <Box
             component="img"
-            image={item.image}
+            src={item.image}
+            alt="Product"
             sx={{
               width: '100%',
-              height: {
-                xs: 240,
-                sm: 360,
-                md: '85vh',
-              },
+              aspectRatio: '4/3',
               objectFit: 'cover',
-              borderRadius: 4,
+              display: 'block',
+              transition: '.35s',
             }}
           />
         ))}
