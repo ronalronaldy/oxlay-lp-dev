@@ -7,8 +7,7 @@ const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
 
 /* ****Pages***** */
-const ProfilePage = Loadable(lazy(() => import('../views/profile-page/ProfilePage')));
-const InvoicePage = Loadable(lazy(() => import('../views/invoice-page/InvoicePage')));
+// const ProfilePage = Loadable(lazy(() => import('../views/profile-page/ProfilePage')));
 const ProductListPage = Loadable(lazy(() => import('../views/product-page/ProductListPage')));
 const ProductDetailPage = Loadable(lazy(() => import('../views/product-page/ProductPage')));
 const HomePage = Loadable(lazy(() => import('../views/home-page/MainPage')));
@@ -26,9 +25,7 @@ const Router = [
 
       { path: '/home-page', element: <HomePage /> },
 
-      { path: '/profile-page', element: <ProfilePage /> },
-
-      { path: '/inv-page', element: <InvoicePage /> },
+      // { path: '/profile-page', element: <ProfilePage /> },
 
       { path: '/trx-page', element: <TrxPage /> },
 
