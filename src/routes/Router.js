@@ -7,7 +7,6 @@ const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
 
 /* ****Pages***** */
-const SamplePage = Loadable(lazy(() => import('../views/sample-page/SamplePage')));
 const ProfilePage = Loadable(lazy(() => import('../views/profile-page/ProfilePage')));
 const InvoicePage = Loadable(lazy(() => import('../views/invoice-page/InvoicePage')));
 const ProductListPage = Loadable(lazy(() => import('../views/product-page/ProductListPage')));
@@ -26,8 +25,6 @@ const Router = [
       { path: '/', element: <Navigate to="/home-page" replace /> },
 
       { path: '/home-page', element: <HomePage /> },
-
-      { path: '/sample-page', element: <SamplePage /> },
 
       { path: '/profile-page', element: <ProfilePage /> },
 

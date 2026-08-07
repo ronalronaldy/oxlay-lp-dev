@@ -139,7 +139,7 @@
                 sx={{
                   position: 'absolute',
 
-                  width: '65%',
+                  width: '50%',
 
                   aspectRatio: '4/3',
 
@@ -163,7 +163,7 @@
                   zIndex,
 
                   boxShadow:
-                    offset === 0 ? '0 35px 80px rgba(0,0,0,.28)' : '0 15px 35px rgba(0,0,0,.18)',
+                    offset === 0 ? '0 35px 80px rgba(255, 0, 0, 0.19)' : '0 15px 35px rgba(0, 0, 0, 0.77)',
                 }}
               >
                 <Box

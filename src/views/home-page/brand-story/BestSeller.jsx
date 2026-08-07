@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
+import {
+  Box,
+  Button,
+  Chip,
+  Container,
+  Rating,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
-import { Box, Chip, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
-// import { slipOnJ1, slipOnJ2, slipOnJ3 } from '../../../utils/data/product/image-list';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import ChatIcon from '@mui/icons-material/Chat';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import slipOnJ1 from 'src/assets/images/products/sonJ1.jpg';
 import slipOnJ2 from 'src/assets/images/products/sonJ2.jpg';
 import slipOnJ3 from 'src/assets/images/products/sonJ3.jpg';
+import RatingStars from '../review/dekstop/RatingStars';
 const images = [slipOnJ3, slipOnJ1, slipOnJ2];
 
 export default function BestSeller() {
@@ -19,102 +32,115 @@ export default function BestSeller() {
         color="primary"
         variant="filled"
       />
-      <Box
-        sx={{
-          mt: 5,
-          overflow: 'hidden',
-          background: 'linear-gradient(180deg,#f8f9fb 0%,#ffffff 100%)',
-        }}
-      >
+     
         {/* Gambar Utama */}
 
         <Box
           sx={{
-            height: {
-              xs: 250,
-              sm: 320,
-              md: 380,
-            },
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            perspective: '1800px',
+            mt: 5,
             position: 'relative',
+            bgcolor: '#fff',
+            borderRadius: 5,
+            overflow: 'hidden',
+            boxShadow: '0 20px 60px rgba(0,0,0,.12)',
+            p: {
+              xs: 2,
+              md: 5,
+            },
           }}
         >
+          {/* Main Image */}
+
           <Box
-            component="img"
-            src={images[selectedImage]}
-            alt="Product"
             sx={{
-              width: '100%',
-              aspectRatio: '4/3',
-              objectFit: 'cover',
-              display: 'block',
-              transition: '.35s',
-              boxShadow: '0 5px 15px rgba(102, 18, 32, 0.80)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: {
+                xs: 250,
+                sm: 350,
+                md: 480,
+              },
             }}
-          />
-        </Box>
-
-        {/* Thumbnail */}
-
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 2,
-            flexWrap: 'wrap',
-          }}
-        >
-          {images.map((image, index) => (
+          >
             <Box
-              key={index}
-              onClick={() => setSelectedImage(index)}
-              mt={isMobile ? 2 : 35}
-              mb={5}
+              component="img"
+              src={images[selectedImage]}
+              alt="Product"
               sx={{
-                cursor: 'pointer',
-                width: {
-                  xs: 80,
-                  sm: 110,
-                  md: 140,
-                },
-                borderRadius: 3,
-
-                overflow: 'hidden',
-
-                transition: '.3s',
-
-                border: selectedImage === index ? '3px solid #000' : '2px solid transparent',
-
-                transform: selectedImage === index ? 'scale(1.05)' : 'scale(1)',
-
-                boxShadow:
-                  selectedImage === index
-                    ? '0 8px 25px rgba(25,118,210,.25)'
-                    : '0 5px 15px rgba(0,0,0,.08)',
-
-                '&:hover': {
-                  transform: 'scale(1.05)',
-                },
+                width: '100%',
+                maxWidth: 900,
+                height: '100%',
+                objectFit: 'contain',
+                transition: '.4s ease',
               }}
-            >
+            />
+          </Box>
+
+          {/* Thumbnail */}
+
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '50%',
+              bottom: {
+                xs: 15,
+                md: 25,
+              },
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: 2,
+              zIndex: 2,
+            }}
+          >
+            {images.map((image, index) => (
               <Box
-                component="img"
-                src={image}
-                alt={`Thumbnail ${index}`}
+                key={index}
+                onClick={() => setSelectedImage(index)}
                 sx={{
-                  width: '100%',
-                  aspectRatio: '4/3',
-                  objectFit: 'cover',
-                  display: 'block',
+                  cursor: 'pointer',
+                  width: {
+                    xs: 70,
+                    sm: 90,
+                    md: 120,
+                  },
+                  bgcolor: '#fff',
+                  borderRadius: 3,
+                  overflow: 'hidden',
+                  border: selectedImage === index ? '3px solid #111' : '2px solid transparent',
+                  transition: '.3s',
+
+                  boxShadow:
+                    selectedImage === index
+                      ? '0 12px 30px rgba(0,0,0,.25)'
+                      : '0 8px 20px rgba(0,0,0,.12)',
+
+                  transform: selectedImage === index ? 'translateY(-8px)' : 'translateY(0)',
+
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                  },
                 }}
-              />
-            </Box>
-          ))}
+              >
+                <Box
+                  component="img"
+                  src={image}
+                  sx={{
+                    width: '100%',
+                    display: 'block',
+                    aspectRatio: '4/3',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </Box>
-      </Box>
+        <Box alignItems={'center'}>
+        <RatingStars/>
+          <Typography>+10.000 Terjual dibeberapa marketplace</Typography>
+        {/* Thumbnail */} 
+        </Box>
     </Container>
   );
 }

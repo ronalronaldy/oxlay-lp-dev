@@ -1,4 +1,3 @@
-import { botR4Red1,  } from '../../../views/sample-page/DataUtils';
 
 import slipOnD2 from 'src/assets/images/review/review1.jpg';
 import sonJ1 from 'src/assets/images/review/review2.jpg';
