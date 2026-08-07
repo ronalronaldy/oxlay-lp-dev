@@ -6,7 +6,7 @@ import { ArrowForward, ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-mater
 
 import { useNavigate } from 'react-router-dom';
 
-import  productCategories  from '../../../utils/data/product/Productcategory-list';
+import  productCategories  from '../../../utils/data/product/productcategory-list';
 import useEmblaCarousel from 'embla-carousel-react';
 
 export default function ProductGrid() {
