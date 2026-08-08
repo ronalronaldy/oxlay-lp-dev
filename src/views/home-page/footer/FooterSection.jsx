@@ -1,5 +1,15 @@
 import React from 'react';
-import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
+
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  IconButton,
+  Link,
+  Typography,
+} from '@mui/material';
+
 import {
   IconMapPin,
   IconBrandShopee,
@@ -16,7 +26,7 @@ export default function FooterSection() {
       sx={{
         mt: 10,
         py: {
-          xs: 6,
+          xs: 5,
           md: 8,
         },
         borderTop: '1px solid',
@@ -24,26 +34,79 @@ export default function FooterSection() {
         background: '#fff',
       }}
     >
-      <Container maxWidth="xl">
-        <Grid container spacing={5} alignItems="center" justifyContent="center">
-          {/* ADDRESS */}
+      <Container maxWidth="lg">
 
-          <Grid item xs={12} md={5}>
-            <Typography variant="h5" fontWeight={700} mb={3} letterSpacing={1}>
+        {/* =========================
+            TOP FOOTER
+        ========================== */}
+
+        <Grid
+          container
+          spacing={{
+            xs: 2,
+            md: 5,
+          }}
+          alignItems="center"
+        >
+
+          {/* =========================
               ADDRESS
-            </Typography>
+          ========================== */}
+
+          <Grid
+            item
+            xs={6}
+            md={5}
+          >
+            {/* <Typography
+              variant="h5"
+              fontWeight={700}
+              mb={{
+                xs: 2,
+                md: 3,
+              }}
+              letterSpacing={1}
+              sx={{
+                fontSize: {
+                  xs: 16,
+                  sm: 18,
+                  md: 24,
+                },
+              }}
+            >
+              ADDRESS
+            </Typography> */}
 
             <Box
               sx={{
                 display: 'flex',
-                gap: 2,
+                gap: {
+                  xs: 1,
+                  md: 2,
+                },
                 alignItems: 'flex-start',
               }}
             >
+
+              {/* Location Icon */}
+
               <Box
                 sx={{
-                  width: 46,
-                  height: 46,
+                  width: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+                  height: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+                  minWidth: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
                   borderRadius: 2,
                   bgcolor: 'primary.light',
 
@@ -52,20 +115,70 @@ export default function FooterSection() {
                   alignItems: 'center',
                 }}
               >
-                <IconMapPin size={24} color="#d32f2f" />
+                <IconMapPin
+                  size={20}
+                  color="#d32f2f"
+                />
               </Box>
 
-              <Box>
-                <Typography fontWeight={600}>Viniro Official Store</Typography>
+              {/* Address Text */}
 
-                <Typography color="text.secondary">Cakung, Jakarta Timur</Typography>
+              <Box
+                sx={{
+                  minWidth: 0,
+                }}
+              >
+                <Typography
+                  fontWeight={600}
+                  sx={{
+                    fontSize: {
+                      xs: 12,
+                      sm: 14,
+                      md: 16,
+                    },
+                    lineHeight: 1.4,
+                  }}
+                >
+                  Viniro Official Store
+                </Typography>
 
-                <Typography color="text.secondary">DKI Jakarta, Indonesia</Typography>
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    fontSize: {
+                      xs: 11,
+                      sm: 13,
+                      md: 14,
+                    },
+                    lineHeight: 1.5,
+                    mt: 0.5,
+                  }}
+                >
+                  Cakung, Jakarta Timur
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    fontSize: {
+                      xs: 11,
+                      sm: 13,
+                      md: 14,
+                    },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  DKI Jakarta, Indonesia
+                </Typography>
               </Box>
+
             </Box>
           </Grid>
 
-          {/* Divider */}
+
+          {/* =========================
+              DIVIDER
+          ========================== */}
 
           <Grid
             item
@@ -76,6 +189,7 @@ export default function FooterSection() {
                 md: 'flex',
               },
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <Divider
@@ -88,26 +202,60 @@ export default function FooterSection() {
             />
           </Grid>
 
-          {/* FOLLOW */}
 
-          <Grid item xs={12} md={5}>
-            <Typography variant="h5" fontWeight={300} fontStyle="italic" mb={3}>
-              Follow us
+          {/* =========================
+              FOLLOW US
+          ========================== */}
+
+          <Grid
+            item
+            xs={6}
+            md={5}
+          >
+            <Typography
+              variant="h5"
+              mb={{
+                xs: 4,
+                md: 3,
+              }}
+            >
+              Ikuti kami
             </Typography>
 
             <Box
               sx={{
                 display: 'flex',
-                gap: 2,
+                gap: {
+                  xs: 0.5,
+                  sm: 1,
+                  md: 2,
+                },
                 flexWrap: 'wrap',
               }}
             >
+
+              {/* Shopee */}
+
               <IconButton
                 component={Link}
                 href="https://shopee.co.id"
                 target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: '#f5f5f5',
+
+                  width: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+
+                  height: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+
                   transition: '.3s',
 
                   '&:hover': {
@@ -117,15 +265,33 @@ export default function FooterSection() {
                   },
                 }}
               >
-                <IconBrandShopee size={22} />
+                <IconBrandShopee
+                  size={20}
+                />
               </IconButton>
+
+
+              {/* TikTok */}
 
               <IconButton
                 component={Link}
                 href="https://www.tiktok.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: '#f5f5f5',
+
+                  width: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+
+                  height: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
 
                   transition: '.3s',
 
@@ -136,15 +302,33 @@ export default function FooterSection() {
                   },
                 }}
               >
-                <IconBrandTiktok size={22} />
+                <IconBrandTiktok
+                  size={20}
+                />
               </IconButton>
+
+
+              {/* Instagram */}
 
               <IconButton
                 component={Link}
                 href="https://instagram.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: '#f5f5f5',
+
+                  width: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+
+                  height: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
 
                   transition: '.3s',
 
@@ -155,15 +339,33 @@ export default function FooterSection() {
                   },
                 }}
               >
-                <IconBrandInstagram size={22} />
+                <IconBrandInstagram
+                  size={20}
+                />
               </IconButton>
+
+
+              {/* WhatsApp */}
 
               <IconButton
                 component={Link}
                 href="https://wa.me/628123456789"
                 target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: '#f5f5f5',
+
+                  width: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
+
+                  height: {
+                    xs: 34,
+                    sm: 40,
+                    md: 46,
+                  },
 
                   transition: '.3s',
 
@@ -174,37 +376,44 @@ export default function FooterSection() {
                   },
                 }}
               >
-                <IconBrandWhatsapp size={22} />
+                <IconBrandWhatsapp
+                  size={20}
+                />
               </IconButton>
 
-              <IconButton
-                component={Link}
-                href="mailto:admin@viniro.com"
-                sx={{
-                  bgcolor: '#f5f5f5',
-
-                  transition: '.3s',
-
-                  '&:hover': {
-                    bgcolor: '#d32f2f',
-                    color: '#fff',
-                    transform: 'translateY(-4px)',
-                  },
-                }}
-              >
-                <IconMail size={22} />
-              </IconButton>
             </Box>
           </Grid>
+
         </Grid>
 
-        {/* Bottom */}
 
-        <Divider sx={{ my: 5 }} />
+        {/* =========================
+            BOTTOM
+        ========================== */}
 
-        <Typography textAlign="center" color="text.secondary" fontSize={14}>
+        <Divider
+          sx={{
+            my: {
+              xs: 4,
+              md: 5,
+            },
+          }}
+        />
+
+        <Typography
+          textAlign="center"
+          color="text.secondary"
+          sx={{
+            fontSize: {
+              xs: 11,
+              sm: 13,
+              md: 14,
+            },
+          }}
+        >
           © {new Date().getFullYear()} <b>Viniro</b>. All Rights Reserved.
         </Typography>
+
       </Container>
     </Box>
   );

@@ -71,10 +71,11 @@
               sm: 320,
               md: 380,
             },
+            
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            perspective: '1800px',
+            perspective: '500px',
             position: 'relative',
           }}
         >

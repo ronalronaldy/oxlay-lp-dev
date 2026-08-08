@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { header } from '../../../utils/data/review/review-list';
 
 const ReviewHeader = ({ mobileScreen }) => {
   const isMobile = mobileScreen;
+  const text = header;
   return (
     <Box textAlign="center" mt={8} mb={8}>
       <Typography
@@ -12,21 +14,11 @@ const ReviewHeader = ({ mobileScreen }) => {
           mb: 1,
         }}
       >
-        CUSTOMER STORIES
+        {text.head}
       </Typography>
 
-      <Typography variant={isMobile ? 'h4': 'h2'}>Apa Kata Pengguna OX-LAY</Typography>
-
-      <Typography
-        variant="body1"
-        sx={{
-          mt: 2,
-          color: '#666',
-        }}
-      >
-        Lebih dari 10.000 pekerja telah mempercayai OXLAY sebagai sepatu kerja pilihan mereka.
-        Berikut pengalaman nyata dari pelanggan kami.
-      </Typography>
+      <Typography variant={isMobile ? 'h4' : 'h2'}>{text.title}</Typography>
+      <Typography variant="body1" sx={{ mt: 2, color: '#666' }}>{text.content}</Typography>
     </Box>
   );
 };

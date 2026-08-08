@@ -23,6 +23,9 @@ const   ProductCard = ({ product }) => {
     navigate(`/product-page/${product.sku}`);
   };
 
+  // console.log(JSON.stringify(product));
+  
+
   return (
     <Card
       sx={{
@@ -36,7 +39,7 @@ const   ProductCard = ({ product }) => {
 
         backgroundColor: '#fff',
 
-        border: '1px solid #eeeeee',
+        border: '1px solid #cec4c4',
 
         transition: 'all .35s ease',
 

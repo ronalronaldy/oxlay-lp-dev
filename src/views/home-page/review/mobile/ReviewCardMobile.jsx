@@ -86,7 +86,7 @@ const ReviewCardMobile = ({
             {review.username}
           </Typography>
 
-          <RatingStars rating={review.rating} />
+          <RatingStars value={review.rating} />
         </Box>
       </Stack>
 
@@ -139,7 +139,7 @@ const ReviewCardMobile = ({
           py: 1.5,
 
           bgcolor: active ? 'primary.main' : '#fafafa',
-
+          borderRadius:8,
           transition: '.4s',
         }}
       >

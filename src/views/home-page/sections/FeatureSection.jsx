@@ -39,18 +39,13 @@ const FeatureSection = () => {
                 key={item.title}
                 textAlign="center"
               >
-                {mobile ? (
-                  <Tooltip title={item.title}>
-                    <IconButton>
-                      <Icon size={36} />
-                    </IconButton>
-                  </Tooltip>
-                ) : (
-                  <>
-                    <Icon size={48} />
-                    <Typography variant={'h6'}>{item.title}</Typography>
-                  </>
-                )}
+                <Tooltip title={mobile? item.title : ''}>
+                  <IconButton>
+                    <Icon size={35} />
+                  </IconButton>
+                  <Typography variant={mobile? 'body1' :'h6'}>{item.title}</Typography>
+                </Tooltip>
+
               </Grid>
             </>
           );

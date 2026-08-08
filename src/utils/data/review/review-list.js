@@ -1,31 +1,29 @@
-
 import slipOnD2 from 'src/assets/images/review/review1.jpg';
 import sonJ1 from 'src/assets/images/review/review2.jpg';
 import sonBesi1 from 'src/assets/images/review/review3.jpg';
 import rv4 from 'src/assets/images/review/review4.jpg';
 import rv5 from 'src/assets/images/review/review5.jpg';
 
+export const header = {
+  head: 'Cerita Pembeli',
+  title: 'Apa Kata Pengguna OX-LAY',
+  content: `Ribuan customer telah mempercayai 
+            OX-LAY sebagai sepatu kerja pilihan mereka.
+            Berikut beberapa pengalaman nyata dari pelanggan kami.
+          `
+};
 export const reviews = [
   {
     id: 1,
-
     username: 'priyoyono556',
-
     avatar: '',
-
     rating: 5,
-
     reviewDate: '09 Maret 2025',
-
     variation: '39',
-
     image: slipOnD2,
-
     helpful: 33,
-
     comment:
       'Ukuran sepatu pas , sesuai yang diharapkan Enak buat kerja harian Semoga awet ...terimakasih seller dan mas kurir 👍',
-
     specs: [
       {
         title: 'Warna',
@@ -92,7 +90,8 @@ export const reviews = [
 
     helpful: 0,
 
-    comment: 'Saya rekomendasikan sepatu ini, harga termasuk murah untuk kualitas setara sepatu safety yg harga 400-500rb,  thanks buat sellernya, semoga sukses jualananya👍😘',
+    comment:
+      'Saya rekomendasikan sepatu ini, harga termasuk murah untuk kualitas setara sepatu safety yg harga 400-500rb,  thanks buat sellernya, semoga sukses jualananya👍😘',
 
     specs: [
       {

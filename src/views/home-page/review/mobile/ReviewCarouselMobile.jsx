@@ -36,7 +36,7 @@ const ReviewCarouselMobile = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          perspective: '3500px',
+          perspective: '200px',
           touchAction: 'pan-y',
           userSelect: 'none',
         }}

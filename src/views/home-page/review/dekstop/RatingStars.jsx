@@ -2,13 +2,13 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Star, StarBorder } from '@mui/icons-material';
 
-const RatingStars = ({ value = 5 }) => {
+const RatingStars = ({ value, size }) => {
   return (
     <Box
       sx={{
         display: 'flex',
         alignItems: 'center',
-        gap: 0.5,
+        gap: 0.8,
       }}
     >
       {[...Array(5)].map((_, index) =>
@@ -17,8 +17,8 @@ const RatingStars = ({ value = 5 }) => {
             key={index}
             sx={{
               color: '#FDB022',
-              fontSize: 18,
-              mb:2
+              fontSize: size,
+              // mb:2
             }}
           />
         ) : (
@@ -26,8 +26,8 @@ const RatingStars = ({ value = 5 }) => {
             key={index}
             sx={{
               color: '#D0D5DD',
-              fontSize: 18,
-              mb:2
+              fontSize: size,
+              // mb:2
             }}
           />
         ),

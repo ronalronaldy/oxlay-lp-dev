@@ -39,7 +39,7 @@ const AboutSection = () => {
           }}
         >
           <Typography variant="h4" sx={{ color: '#999' }}>
-            TENTANG KITA
+            O X - L A Y
           </Typography>
 
           <Typography variant="subtitle1" mt={2} color="text.secondary" fontWeight={600}>

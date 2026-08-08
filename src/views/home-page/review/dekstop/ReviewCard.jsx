@@ -84,7 +84,7 @@ const ReviewCard = ({ review }) => {
         <Grid item xs={12} md={7}>
           <Stack spacing={2}>
             <Stack direction="row" spacing={1.5} alignItems="center">
-              <RatingStars rating={review.rating} />
+              <RatingStars value={review.rating} size={18}  />
 
               <Typography variant="h5" fontWeight={700}>
                 {review.rating}.0

@@ -32,7 +32,7 @@ const BrandStorySection = () => {
             //   fontWeight: 900,
             // }}
           >
-            WHO WE ARE
+            {brandStory.badge}
           </Typography>
         }
         variant="outlined"
@@ -43,7 +43,7 @@ const BrandStorySection = () => {
           mt: 2,
           color: '#666',
         }}
-      >Sepatu OX-LAY Dibuat Untuk Para Pekerja Keras</Typography>
+      >{brandStory.title}</Typography>
 
       <CoverflowCarousel />
       <Typography
@@ -53,10 +53,7 @@ const BrandStorySection = () => {
           color: '#666',
         }}
       >
-        Dibuat secara lokal di Indonesia, dengan standar kualitas yang kami jaga di setiap proses
-        produksi, OX-LAY menghadirkan sepatu kerja yang memadukan kekuatan, kenyamanan, dan desain
-        fungsional. Dari bengkel produksi kami hingga sampai ke kaki para pekerja, setiap pasang
-        sepatu dibuat dengan komitmen untuk memberikan perlindungan terbaik di lingkungan kerja.
+        {brandStory.highlights}
       </Typography>
 
       <BestSeller />
